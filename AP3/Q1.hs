@@ -14,9 +14,9 @@ type Jogo = (Time, Int, Int, Time)
 grupoA :: Grupo
 grupoA = ('A', Egito, Russia, Arabia, Uruguai)
 jogos1 :: [Jogo]
-jogos1 = [(Egito, 1, 3, Russia), (Arabia, 0, 3, Uruguai), 
-          (Egito, 0, 0, Arabia),(Russia, 0, 2, Uruguai), 
-          (Russia, 2, 0, Arabia), (Egito, 0, 2, Uruguai), 
+jogos1 = [(Egito, 1, 3, Russia), (Arabia, 1, 1, Uruguai), 
+          (Egito, 1, 0, Arabia),(Russia, 2, 2, Uruguai), 
+          (Russia, 0, 1, Arabia), (Egito, 2, 2, Uruguai), 
           (Ira, 1, 1, Marrocos), (Portugal, 2, 2, Espanha), 
           (Ira, 1, 2, Portugal), (Ira, 0, 1, Espanha), 
           (Marrocos, 0, 3, Portugal), (Marrocos, 1, 1, Espanha)]
@@ -69,7 +69,7 @@ contaPonto ((a, b, c, d):xs) tabela
 
 qSortTuple :: Tabela -> Tabela
 qSortTuple [] = []
-qSortTuple ((a, b, c, d):xs) = qSortTuple [(a, y, c, d) | (a, y, c, d) <- xs, y >= b] ++ [(a, b, c, d)] ++ qSortTuple [(a, y, c, d) | (a, y, c, d) <- xs, y < b]
+qSortTuple ((a, b, c, d):xs) = qSortTuple [(a, y, z, w) | (a, y, z, w) <- xs, y > b || (y == b && z > c) || ( y == b && z == c && w > d) ] ++ [(a, b, c, d)] ++ qSortTuple [(a, y, z, w) | (a, y, z, w) <- xs, y < b ||(y == b && z < c) || ( y == b && z == c && w < d)]
 
 qSortSaldo :: Tabela -> Tabela
 qSortSaldo [] = []
@@ -95,7 +95,7 @@ getSecondFromTouple (a, b, c, d) = b
 
 -- Teste:
 -- classificados ('A', "Egito", "Russia", "Arabia", "Uruguai") jogos1
-classificados :: Grupo -> [Jogo] -> (Time, Time)
-classificados x jogos = getTwoFirst (qSortTuple (contaPonto (tratarJogos x jogos) (createTabelaFromGrupo x)))
+classificados :: Grupo -> [Jogo] -> Tabela
+classificados x jogos = (qSortTuple (contaPonto (tratarJogos x jogos) (createTabelaFromGrupo x)))
 -- contaPonto (tratarJogos groupA  jogos1) (createTabelaFromGrupo groupA)
 
