@@ -1,0 +1,27 @@
+2.
+a)legibilidade: É o conceito relacionado ao quanto é fácil de ser lido o seu código.
+Se ele foi escrito de uma forma que diretamente se consegue entender qual o objetivo
+de cada trecho de atividades. Além também de prezar pela não existência de
+ambiguidades, como quando utiliza-se trechos de bloco sem escopo identificados.
+
+b)modularidade: Um conceito relacionado a divisão das tarefas realizadas no código
+em partes menores, mas que juntas conseguem realizar a atividade final. O objetivo
+é que se consiga realizar alterações no código, testes e updates sem que afete tudo
+que já foi desenvolvido. Em times de desenvolvimento grandes, a modulariazação permite
+que essas mudanças sejam realizadas sem que todos os grupos saibam o que se está sendo
+realizado, e mesmo assim eles ainda possam utilizar das funções sem nenhum problema.
+
+c)confiabilidade: Existem linguagens de programação, que em sua fase de compilação já
+dispõe de artifícios que possam prever erros, mesmo que a sintaxe do seu código esteja
+correta, gerando warnings ou até erros no momento de compilação. Ou até mesmo dentro do
+código podermos tratar as exceções e erros gerados, mesmo sem nos preocuparmos em
+trata-los completamente no código em si.
+
+d)ortogonalidade: Significa que um conjunto pequeno de funções primitivas podem ser
+combinadas em um número pequeno de maneiras para construir todas as outras estruturas
+de controle e dados de uma linguagem. Alguns exemplos de falta de ortogonalidade em C:
+- todos os tipos de dados são passados por valor, exceto os vetores;
+- uma struct pode ser o retorno de uma função, mas um vetor não
+
+e)portabilidade: É a característica de se desenvolver um código em determinada linguagem
+sem que se precise reescrever ou adapta-lo para que possa funcionar em outras plataformas.

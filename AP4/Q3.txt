@@ -1,0 +1,7 @@
+Letra E - (I, IV incorretas)
+
+I - Está incorreta porque se existirem métodos iguais, dentro de uma classe,
+eles teriam os mesmos atributos, e ao tentar executar este método, de mesmo nome,
+um erro seria levantado, pois o compilador não tem como saber escolher entre os dois.
+IV - Está incorreta porque você pode ter acesso a atributos privados, desde que,
+existam os métodos get's e set's de cada um dos componentes privados.
